@@ -1,0 +1,116 @@
+<mvc:View 
+	xmlns:mvc="sap.ui.core.mvc" 
+	xmlns:core="sap.ui.core" 
+	xmlns="sap.uxap"
+	xmlns:layout="sap.ui.layout"
+	xmlns:m="sap.m"
+	xmlns:forms="sap.ui.layout.form"
+	xmlns:smartform="sap.ui.comp.smartform"
+	xmlns:smartField="sap.ui.comp.smartfield"
+	controllerName="testApp.Customer360.controller.MainView2"
+	displayBlock="false" >
+	<ObjectPageLayout id="ObjectPageLayout"
+		showTitleInHeaderContent="true"
+		showEditHeaderButton="true"
+		useIconTabBar="true"
+		editHeaderButtonPress="handleEditBtnPress">
+		<headerTitle>
+			<ObjectPageHeader objectImageURI="https://policyexchange.org.uk/wp-content/uploads/2018/06/netenyahu.jpeg"
+							  objectTitle="The BB"
+							  objectImageShape="Circle"
+							  objectImageAlt="BB"
+							  objectSubtitle="Senior Prime Minister"
+							  isObjectTitleAlwaysVisible="false"
+							  isObjectSubtitleAlwaysVisible="false">
+				<sideContentButton>
+					<m:Button icon="sap-icon://SAP-icons-TNT/api"/>
+				</sideContentButton>
+			</ObjectPageHeader>
+		</headerTitle>
+		<headerContent>
+			<layout:VerticalLayout>
+				<m:Label text="Jerusalem, Israel"
+						class="myLabelBold"/>
+				<m:Button
+						icon ="sap-icon://SAP-icons-TNT/api"
+						width="200px"/>
+			</layout:VerticalLayout>
+		</headerContent>
+
+		<sections>
+			<ObjectPageSection id="goalsSection" title="2014 Goals Plan">
+				<subSections>
+					<ObjectPageSubSection id="goalsSectionSS1">
+						<blocks>
+							<layout:Splitter id="mainSplitter" class="mySepartorSplitter">
+							<m:HBox>
+							<!--<m:layoutData><layout:SplitterLayoutData resizable="false" class="mySepartorSplitter"/></m:layoutData>-->
+							<forms:SimpleForm editable="false" layout="ColumnLayout">
+								
+									<m:Label text="Evangelize the UI framework across the company" design="Bold"/>
+									<m:Text text="4 days overdue Cascaded"/>
+						
+									<m:Label text="Get trained in development management direction" design="Bold"/>
+									<m:Text text="Due Nov 21"/>
+						
+									<m:Label text="Mentor junior developers" design="Bold"/>
+									<m:Text text="Due Dec 31 Cascaded"/>
+						
+							</forms:SimpleForm>
+							</m:HBox>
+							<m:HBox>
+							<!--<m:layoutData><layout:SplitterLayoutData resizable="false" /></m:layoutData>-->
+							<forms:SimpleForm editable="false" layout="ColumnLayout">
+								
+									<m:Label text="Evangelize the UI framework across the company" design="Bold"/>
+									<m:Text text="4 days overdue Cascaded"/>
+						
+									<m:Label text="Get trained in development management direction" design="Bold"/>
+									<m:Text text="Due Nov 21"/>
+						
+									<m:Label text="Mentor junior developers" design="Bold"/>
+									<m:Text text="Due Dec 31 Cascaded"/>
+						
+							</forms:SimpleForm>
+							</m:HBox>
+							</layout:Splitter>
+						</blocks>
+					</ObjectPageSubSection>
+				</subSections>
+			</ObjectPageSection>
+			<ObjectPageSection id="goalsSection2" title="2015 Goals Plan">
+				<subSections>
+					<ObjectPageSubSection id="SubSection2" title="Connect1">
+						<blocks>
+							<core:Fragment fragmentName="testApp.Customer360.fragment.tableTest" type="XML" />
+						</blocks>
+					</ObjectPageSubSection>
+					
+					<ObjectPageSubSection id="SubSection3" title="Connect2">
+						<blocks>
+							<forms:SimpleForm editable="true" layout="ColumnLayout">
+						
+									<m:Label text="Evangelize the UI framework across the company" design="Bold"/>
+									<m:Text text="4 days overdue Cascaded"/>
+						
+									<m:Label text="Get trained in development management direction" design="Bold"/>
+									<m:Text text="Due Nov 21"/>
+						
+									<m:Label text="Mentor junior developers" design="Bold"/>
+									<m:Text text="Due Dec 31 Cascaded"/>
+						
+							</forms:SimpleForm>
+						</blocks>
+					</ObjectPageSubSection>
+				</subSections>
+			</ObjectPageSection>
+		</sections>
+		<footer>
+			<m:OverflowToolbar>
+				<m:ToolbarSpacer />
+				<m:Button type="Accept" text="Accept"/>
+				<m:Button type="Reject" text="Reject"/>
+			</m:OverflowToolbar>
+		</footer>
+	</ObjectPageLayout>
+</mvc:View>

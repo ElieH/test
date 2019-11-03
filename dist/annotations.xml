@@ -1,0 +1,18 @@
+<edmx:Edmx xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Version="4.0">
+	<edmx:Reference Uri="/Northwind/V2/Northwind/Northwind.svc/$metadata">
+		<edmx:Include Alias="NorthwindModel" Namespace="NorthwindModel"/>
+	</edmx:Reference>
+	<edmx:Reference Uri="https://wiki.scn.sap.com/wiki/download/attachments/448470974/Common.xml?api=v2">
+		<edmx:Include Alias="Common" Namespace="com.sap.vocabularies.Common.v1"/>
+	</edmx:Reference>
+	<edmx:DataServices>
+		<Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="Customer360.annotations.NorthwindModel">
+			<Annotations Target="NorthwindModel.Product/ProductName">
+				<Annotation Term="Common.MinOccurs" Int="3"/>
+				<Annotation Term="Common.MaxOccurs" Int="10"/>
+				<Annotation Term="Common.QuickInfo" String="Fuck!!!"/>
+				<Annotation Term="Common.Label" String="Description"/>
+			</Annotations>
+		</Schema>
+	</edmx:DataServices>
+</edmx:Edmx>

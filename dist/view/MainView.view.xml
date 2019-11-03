@@ -1,0 +1,97 @@
+<mvc:View 
+	xmlns:mvc="sap.ui.core.mvc" 
+	xmlns="sap.m" 
+	xmlns:tnt="sap.tnt"
+	xmlns:smartFilterBar="sap.ui.comp.smartfilterbar"
+	xmlns:smartTable="sap.ui.comp.smarttable"
+	controllerName="testApp.Customer360.controller.MainView"
+	displayBlock="true" >
+	<Shell id="shell">
+		<App id="app">
+			<pages>
+				<Page id="page" title="{i18n>title}">
+					<customHeader>
+						<Toolbar>
+							<content>
+							<Button 
+								icon	="sap-icon://menu2" 
+								press	="onCollapseExpandSidebar"/>
+							</content>
+						</Toolbar>
+					</customHeader>
+					<content>
+						<HBox>
+							<Image
+								src = "https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_92x30dp.png"
+								densityAware = "true"/>
+							<tnt:SideNavigation 
+								id		="sideNavigation" 
+								class	= "side-navigation-demo"
+								expanded="false">
+								<tnt:item>
+									<tnt:NavigationList>
+										<tnt:NavigationListItem 
+											text	="{i18n>customerGeneral}" 
+											icon	="sap-icon://employee"/>
+										<tnt:NavigationListItem 
+											text	="{i18n>customerFinancial}" 
+											icon	="sap-icon://customer-financial-fact-sheet"/>
+										<tnt:NavigationListItem 
+											text	="{i18n>customerBulding}" 
+											icon	="sap-icon://building"/>
+									</tnt:NavigationList>
+								</tnt:item>
+								<tnt:fixedItem>
+									<tnt:NavigationList>
+										<tnt:NavigationListItem text="Item 1" icon="sap-icon://employee"/>
+										<tnt:NavigationListItem text="Item 2" icon="sap-icon://building"/>
+										<tnt:NavigationListItem text="Item 3" icon="sap-icon://card"/>
+									</tnt:NavigationList>
+								</tnt:fixedItem>
+							</tnt:SideNavigation>
+							<VBox>
+								<smartFilterBar:SmartFilterBar
+									id			="smartFilterBar"
+									entitySet	="Employees">
+									<smartFilterBar:controlConfiguration>
+										<smartFilterBar:ControlConfiguration
+											key						="EmployeeID" 
+											visibleInAdvancedArea	="true"
+											preventInitialDataFetchInValueHelpDialog="false">
+										</smartFilterBar:ControlConfiguration>
+									</smartFilterBar:controlConfiguration>
+								</smartFilterBar:SmartFilterBar>
+								<smartTable:SmartTable 
+									id				="smartTable"
+									initiallyVisibleFields = "EmployeeID,LastName,FirstName"
+									smartFilterId	="smartFilterBar" 
+									tableType		="ResponsiveTable" 
+									editable		="false"
+									entitySet		="Employees" 
+									useVariantManagement="false"
+									useTablePersonalisation="true" 
+									header			="Employees"
+									showRowCount	="true"
+									useExportToExcel="true" 
+									enableAutoBinding="true">
+								</smartTable:SmartTable>
+							</VBox>
+						</HBox>
+					</content>
+					<footer>
+						<Toolbar 
+							width	="100%" 
+							id		="mainToolbar">
+							<content>
+								<Button 
+									text		="{i18n>save}" 
+									id			="saveButton" 
+									activeIcon	="sap-icon://save"/>
+							</content>
+						</Toolbar>
+					</footer>
+				</Page>
+			</pages>
+		</App>
+	</Shell>
+</mvc:View>
